@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<title>GraigKoin Shop</title>
+	<head>
+		<style type="text/css">
+				@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+				@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+				@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+				@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+				@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+				.name{
+				   font-family: 'Poppins',sans-serif;
+				   font-size: 64px; 
+				   margin: 0 0 0 0;
+				}
+				.bluebar{
+					margin: 0 0 0 0;
+					padding-right: auto;
+					background: deepskyblue;
+				}
+				.header{
+					margin: 0 0 0 0;
+					padding-right: auto;
+					background: deepskyblue;
+					font-family: 'Nanum Gothic', sans-serif;
+				}
+				p{
+					margin: 0 0 0 0;
+					font-family: 'Titillium Web', sans-serif;
+				}
+				.gkoin{
+					padding-left: 100%;
+					font-family: 'Space Grotesk', sans-serif;
+					font-size: 32px;
+				}
+				.motto{
+					margin: 0 0 0 0;
+					padding-left: 16px;
+					padding-top: 32px;
+					font-family: 'Space Grotesk', sans-serif;
+					font-size: 16px;
+				}
+				.l{
+					padding-left: 100%;
+				}
+				.best{
+					padding: 0,0,0,0;
+					color: red;
+					font-size: 16px;
+					margin: -16px, 0, 0, 0;
+					font-family: 'Titillium Web', sans-serif;
+				}
+				.back{
+					padding-left: 100%;
+				}
+				.button {
+					background: white;
+					border: none;
+					text-align: center;
+					text-decoration: none;
+					display: inline-block;
+					font-size: 16px;
+					margin-right: -32px;
+				}
+				.list{
+  					display: flex;
+  					flex-wrap: wrap;
+  					align-items:flex-start;
+  					align-content:flex-start;
+  					height: calc(100vh - 100px);
+				}
+				.text{
+					font-size: 75px;
+					padding: auto;
+					margin: auto;
+					height: 100px;
+					background: deepskyblue;
+					text-align: center;
+					width: 500px;
+					font-family: 'Rajdhani', sans-serif;
+				}
+				.icon{
+					background: darkgray;
+					text-align: center;
+					height: 100px;
+					width: 100px;
+					margin: 5px;
+  					text-align: center;
+				}
+				.price{
+					font-size: 50px;
+					background: darkgray;
+					text-align: center;
+					height: 100px;
+					width: 200px;
+					margin: 5px;
+  					text-align: center;
+  					font-family: 'Rajdhani', sans-serif;
+				}
+				.desc{
+					font-size: 32px;
+					background: darkgray;
+					height: 100px;
+					width: 500px;
+					margin: 5px;
+  					text-align: center;
+  					font-family: 'Rajdhani', sans-serif;
+				}
+				.purchase{
+					background: darkgray;
+					border: none;
+					text-align: center;
+					text-decoration: none;
+					display: inline-block;
+					font-size: 16px;
+					color: dodgerblue;
+					font-family: 'Space Grotesk', sans-serif;
+				}
+				.bought{
+					background: darkgray;
+					border: none;
+					text-align: center;
+					text-decoration: none;
+					display: inline-block;
+					font-size: 16px;
+					color: black;
+					font-family: 'Space Grotesk', sans-serif;
+				}
+			</style>
+	</head>
+		<body>
+			<script type="text/javascript">
+				function back() {
+					window.location.replace("https://graigs-list.github.io/gl.com/");
+				}
+				let koins = localStorage.gkoin;
+				var test = function(value,object) {
+                	object.innerHTML= value;
+                	object.classList.add('bought');
+					object.classList.remove('purchase');
+					if (localStorage.gkoin == "NaN"){
+						localStorage.setItem('gkoin',0);
+					}
+					koins = Number(koins) + 100;
+					localStorage.setItem('gkoin', koins);
+					console.log(localStorage.gkoin);
+            	}	
+        	</script>
+			<table>
+     			<tr>
+					<td><h1 class = 'name'>Graig's List</h1></td>
+		          	<td class = 'motto'>Avoiding copyrights since 2022</td>
+		          	<td class = 'back'><img onclick = 'back()' width="20" height = '20' src = 'https://cdn3.iconfinder.com/data/icons/complex-arrows-add-on-glyph/48/Sed-25-512.png'></td>
+		          	<td class = 'back'><button class = 'button' onclick = 'back()'>Back</button></td>
+		        </tr>
+		    </table>
+		    <h3 class = 'header'>Welcome to the Koin Shop!</h3>
+		<p>Here, you can buy GregKoin to hire people!</p>
+		<div class = 'list'>
+			<div class = 'text'>Standard Pack</div>
+			<div class = 'icon'><img width = '100' height = '100' src = 'https://media.istockphoto.com/vectors/stack-of-coins-with-coin-in-front-of-it-icon-flat-coins-pile-coins-vector-id938687120?k=20&m=938687120&s=170667a&w=0&h=VIraPiozJo4wFacORmrHlDipRnJSXH39p4uts9-3vZE='></div>
+			<div class = 'desc'>124 GregKoin<br>$0.95 fee applied up front.</div>
+			<div id = 'onep' class = 'price'>$24.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Value Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' 
+				src = 'https://media.istockphoto.com/vectors/gold-coins-stack-isolated-vector-id1178102534?k=20&m=1178102534&s=612x612&w=0&h=nwSocKnBbG3f2s4lUO71OvboPI6Wd1LerJiGQR-5lIY='></div>
+			<div class = 'desc'>248 GregKoin<br>$1.95 fee applied up front.</div>
+			<div class = 'price'>$49.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Deluxe Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjYtqMoCDwRjixcQ8_9QZEaBZc9H0rFAWccg&usqp=CAU'></div>
+			<div class = 'desc'>497 GregKoin<br>$2.95 fee applied up front.</div>
+			<div class = 'price'>$99.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Ultimate Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-k8C4BPhSJhoaQ_U59zqIsyAGk4OQf4QVaw&usqp=CAU'></div>
+			<div class = 'desc'>746 GregKoin<br>$3.95 fee applied up front.<br><p class = 'best'>BEST VALUE!</p></div>
+			<div class = 'price'>$149.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Prenium Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-k8C4BPhSJhoaQ_U59zqIsyAGk4OQf4QVaw&usqp=CAU'></div>
+			<div class = 'desc'>Prenium Subcription<br>$9.99 monthly fee.<br><p class = 'best' style = 'color: black;'>100 GregKoin a month!</p></div>
+			<div class = 'price'>$9.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Bronze Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-k8C4BPhSJhoaQ_U59zqIsyAGk4OQf4QVaw&usqp=CAU'></div>
+			<div class = 'desc'>150 GregKoin + Prenium Subcription<br>$14.99 monthly fee.<br><p class = 'best' style = 'color: black;'>150 GregKoin a month!</p></div>
+			<div class = 'price'>$14.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Silver Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-k8C4BPhSJhoaQ_U59zqIsyAGk4OQf4QVaw&usqp=CAU'></div>
+			<div class = 'desc'>200 GregKoin + Prenium Subcription<br>$19.99 monthly fee.<br><p class = 'best' style = 'color: black;'>200 GregKoin a month!</p></div>
+			<div class = 'price'>$19.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+
+			<div class = 'text'>Gold Pack</div>
+			<div class = 'icon'><img height = '100' width = '100' src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-k8C4BPhSJhoaQ_U59zqIsyAGk4OQf4QVaw&usqp=CAU'></div>
+			<div class = 'desc'>500 Greg Koin + Prenium Subcription<br>$99.99 monthly fee.<p class = 'best'>700 GregKoin a month! BEST VALUE!</p></div>
+			<div class = 'price'>$99.99<br><button class = 'purchase' id = 'onep' onclick = 'test("BOUGHT",this)'>BUY NOW</button></div>
+		</div>
+		</body>
+</html>
