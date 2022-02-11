@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<title>Graig's List</title>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+			.name{
+			   font-family: 'Poppins',sans-serif;
+			   font-size: 64px; 
+			   margin: 0 0 0 0;
+			}
+			.bluebar{
+				margin: 0 0 0 0;
+				padding-right: auto;
+				background: deepskyblue;
+			}
+			.header{
+				margin: 0 0 0 0;
+				padding-right: auto;
+				background: deepskyblue;
+				font-family: 'Nanum Gothic', sans-serif;
+			}
+			p{
+				margin: 0 0 0 0;
+				font-family: 'Titillium Web', sans-serif;
+			}
+			.gkoin{
+				padding-left: 78%;
+				font-family: 'Space Grotesk', sans-serif;
+				font-size: 32px;
+			}
+			.motto{
+				margin: 0 0 0 0;
+				padding-left: 16px;
+				padding-top: 32px;
+				font-family: 'Space Grotesk', sans-serif;
+				font-size: 16px;
+			}
+			.l{
+				padding-left: 95%;
+			}
+			.r{
+				margin-right: 100%;
+			}
+			.list{
+  				display: flex;
+  				flex-wrap: wrap;
+  				align-items:flex-start;
+  				align-content:flex-start;
+  				height: calc(100vh - 100px);
+			}
+			.icon{
+				background: darkgray;
+				text-align: center;
+				height: 200px;
+				width: 19.251%;				
+				margin: 5px;
+  				text-align: center;
+			}
+			.make{
+				background: white;
+				border: none;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				color: dodgerblue;
+				font-family: 'Space Grotesk', sans-serif;
+			}
+			label{
+				font-family: 'Space Grotesk', sans-serif;
+				color: black;
+			}
+			.sub{
+				border: none;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				color: black;
+				font-family: 'Space Grotesk', sans-serif;
+				background: deepskyblue;
+			}
+			.hidden{
+				background: white;
+				padding-right: auto;
+				color: white;
+			}
+			.wrong{
+				background: red;
+				padding-right: auto;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+     		 <tr>
+          		<td><h1 class = 'name'>Graig's List</h1></td>
+          		<td class = 'motto'>Avoiding copyrights since 2022</td>
+      		</tr>
+		</table>
+		<h3 class = 'header'>Sign up today!</h3>
+		<table>
+			<tr>
+				<td><p>Graig's List is a place where you can hire people for your jobs!</p></td>
+				<td><button class = 'make' onclick = 'login()'>LOGIN</button></td>
+			</tr>
+		</table>
+		<hr>
+  <label for="Username">Username:</label>
+  <input type="text" id="Username" name="Username"><br><br>
+  <label for="pass">Password:</label>
+  <input type="password" id="pass" name='pass'><br><br>
+  <label for="pass2">Repeat Password:</label>
+  <input type="password" id="pass2" name='pass2'><br><br>
+  <label for="email">Email:</label>
+  <input type="email" id = 'email' name = 'email'><br><br>
+  <div id = 'chk' class = 'hidden'></div>
+  <hr>
+  <button class = 'sub' onclick = 'sign()'>Sign Up</button>  
+  <script type="text/javascript">
+  	function sign() {
+  		let pass1 = document.getElementById("pass").value;
+  		let pass2 = document.getElementById("pass2").value;
+  		let user = document.getElementById('Username').value;
+  		let mail = document.getElementById('email').value;
+  		if (pass1 == pass2 && pass1 != '')
+  		{
+  			document.getElementById("chk").classList.remove('wrong');
+  			document.getElementById('chk').classList.add('hidden');
+  			document.getElementById('chk').innerHTML = '';
+  		}
+  		if (user == pass1)
+  		{
+  			document.getElementById("chk").classList.remove('hidden');
+  			document.getElementById('chk').classList.add('wrong');
+  			document.getElementById('chk').innerHTML = "The username can't be the password!";
+  		}
+  		if (mail == NaN || mail == '')
+  		{
+  			document.getElementById("chk").classList.remove('hidden');
+  			document.getElementById('chk').classList.add('wrong');
+  			document.getElementById('chk').innerHTML = "The email can't be empty!";
+  		}
+  		if (pass1 != pass2)
+  		{
+  			document.getElementById("chk").classList.remove('hidden');
+  			document.getElementById('chk').classList.add('wrong');
+  			document.getElementById('chk').innerHTML = 'Make sure the passwords match!';
+  		}
+  		if (pass1 == NaN || pass1 == '')
+  		{
+  			document.getElementById("chk").classList.remove('hidden');
+  			document.getElementById('chk').classList.add('wrong');
+  			document.getElementById('chk').innerHTML = "The password can't be empty!";
+  		}
+  		if (user == NaN || user == '')
+  		{
+  			document.getElementById("chk").classList.remove('hidden');
+  			document.getElementById('chk').classList.add('wrong');
+  			document.getElementById('chk').innerHTML = "The username can't be empty!";
+  		}
+  		if (localStorage.getItem(user) == pass1)
+  		{
+  				document.getElementById("chk").classList.remove('hidden');
+  				document.getElementById('chk').classList.add('wrong');
+  				document.getElementById('chk').innerHTML = "This account already exists! Try logging in!";
+  		}
+  		if (!document.getElementById('chk').classList.contains('wrong'))
+  		{
+  			  				console.log(user + " created!");
+  				console.log(user + " created!");
+  			localStorage.setItem(user,pass1); 
+  			localStorage.setItem('account',true);
+  			localStorage.setItem('login',true);
+  			window.location.replace("https://graigs-list.github.io/gl.com/");
+  		}
+  	}
+  	function login(){
+  		window.location.replace("https://graigs-list.github.io/gl.com/login.html");
+  	}
+  </script>
+	</body>
+</html>
