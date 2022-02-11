@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<title>Graig's List</title>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+			.name{
+			   font-family: 'Poppins',sans-serif;
+			   font-size: 64px; 
+			   margin: 0 0 0 0;
+			}
+			.bluebar{
+				margin: 0 0 0 0;
+				padding-right: auto;
+				background: deepskyblue;
+			}
+			.header{
+				margin: 0 0 0 0;
+				padding-right: auto;
+				background: deepskyblue;
+				font-family: 'Nanum Gothic', sans-serif;
+			}
+			p{
+				margin: 0 0 0 0;
+				font-family: 'Titillium Web', sans-serif;
+			}
+			.gkoin{
+				padding-left: 78%;
+				font-family: 'Space Grotesk', sans-serif;
+				font-size: 32px;
+			}
+			.motto{
+				margin: 0 0 0 0;
+				padding-left: 16px;
+				padding-top: 32px;
+				font-family: 'Space Grotesk', sans-serif;
+				font-size: 16px;
+			}
+			.l{
+				padding-left: 95%;
+			}
+			.r{
+				margin-right: 100%;
+			}
+			.list{
+  				display: flex;
+  				flex-wrap: wrap;
+  				align-items:flex-start;
+  				align-content:flex-start;
+  				height: calc(100vh - 100px);
+			}
+			.icon{
+				background: darkgray;
+				text-align: center;
+				height: 200px;
+				width: 19.251%;				
+				margin: 5px;
+  				text-align: center;
+			}
+			.make{
+				background: white;
+				border: none;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 16px;
+				color: dodgerblue;
+				font-family: 'Space Grotesk', sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+     		 <tr>
+          		<td><h1 class = 'name' id = 'TITLE'>Graig's List</h1></td>
+          		<td class = 'motto'>Avoiding copyrights since 2022</td>
+          		<td class = 'l'><img onclick = 'koinshop()' id = 'img' width ="45"
+				height ="45" src = 'https://media3.giphy.com/media/njON3jEmTYHEfRbfsk/giphy.gif?cid=6c09b95255in3up4v30am14kfxivh72m72493e34pn812nl1&rid=giphy.gif&ct=s' alt = 'GraigKoin'>
+				</td>
+          		<td class = 'gkoin'id = 'koin' onclick = 'koinshop()'>0</p></td>
+      		</tr>
+		</table>
+		<h3 class = 'header'>Welcome to Graig's List!</h3>
+		<table>
+			<tr>
+				<td><p>Graig's List is a place where you can hire people for your jobs!</p></td>
+				<td><button class = 'make' onclick = 'make()'>MAKE LISTING</button></td>
+				<td><button class = 'make' onclick = 'logout()' style = 'color: red;'>LOG OUT</button></td>
+			</tr>
+		</table>
+		<div id = 'cont'class="list">
+		</div>
+		<script type="text/javascript">
+			function getRndInteger(min, max) {
+			    return Math.floor(Math.random() * (max - min + 1) ) + min;
+			}
+			function g(){
+				var letters = ['a','b','c','d','e','f','g','h','i','j'];
+				let letter = letters[getRndInteger(0,9)];
+				return letter.toUpperCase();
+			}
+			function genid(){
+				var id = '';
+				var o = getRndInteger(0,9);
+				var t = getRndInteger(0,9);
+				var th = getRndInteger(0,9);
+				var one = getRndInteger(0,9);
+				var two = getRndInteger(0,9);
+				var three = getRndInteger(0,9);
+				id = String(o) + String(t) +g()+ String(th) + String(one) +g()+ String(two) + String(three)+g();
+				return id;
+			}
+			function hash(){
+				var id = '';
+			    var o = genid();
+			    var t = genid();
+				var th = genid();
+				var one = genid();
+				var two = genid();
+				var three = genid();
+				id = String(o) +g()+ String(t) +g()+ String(th) +g()+ String(one) +g()+ String(two) +g()+ String(three);
+			    return id;
+			}
+			let h = hash();
+			console.log(h);
+			//Coming soon
+			/*function animateTitle(){
+				var one = 'G';
+				var two = 'Gr';
+				var three = 'Gra';
+				var four = 'Grai';
+				var five = 'Graig';
+				var six = "Graig'";
+				var seven = "Graig's";
+				var eight = "Graig's ";
+				var nine = "Graig's L";
+				var ten = "Graig's Li";
+				var eleven = "Graig's Lis";
+				var twelve = "Graig's List";
+				let item = document.getElementById('TITLE');
+				while (item.innerHTML !== twelve){
+					item.innerHTML = one;
+					item.innerHTML = two;
+				}
+			}*/
+			if (localStorage.id == 'NaN' || localStorage.id == NaN || localStorage.id == 'undefined'){
+				console.log(h);
+			}
+			if (localStorage.list == "undefined" || localStorage.list == NaN || localStorage.list == 'NaN'){
+				localStorage.setItem('list',0);
+			}
+			if (localStorage.gkoin == "undefined" || localStorage.gkoin == NaN || localStorage.gkoin == 'NaN'){
+				localStorage.setItem('gkoin',0);
+			}
+			console.log(localStorage.list);
+			let list = Number(localStorage.list);
+			function koinshop() {
+				window.location.href = "https://graigs-list.github.io/graigslist.shop.html/";
+			}
+			let koin = localStorage.gkoin;
+			console.log(localStorage.gkoin);
+			let object = document.getElementById("koin");
+			object.innerHTML = koin;
+
+			function make(){
+				const object = document.getElementById("cont");
+				const newDiv = document.createElement("div");
+  				const newContent = document.createTextNode("Listing");
+  				newDiv.appendChild(newContent);
+  				object.appendChild(newDiv);
+  				newDiv.classList.add('icon');
+  				list = list + 1;
+				localStorage.setItem('list', list);
+				console.log(localStorage.list);
+			}
+			let counter = list
+			while (!counter == 0){
+				const object = document.getElementById("cont");
+				const newDiv = document.createElement("div");
+  				const newContent = document.createTextNode("Listing");
+  				newDiv.appendChild(newContent);
+  				object.appendChild(newDiv);
+  				newDiv.classList.add('icon');
+  				counter = counter - 1;
+			}
+			if (localStorage.getItem('account') == "true"){
+				if (localStorage.getItem('login') == "true"){
+					console.log(localStorage.login);
+				} else {
+					localStorage.setItem('login',false);
+					window.location.replace("https://graigs-list.github.io/graigslist.login.html/");
+				}
+			} else {
+				localStorage.setItem('login',false);
+				localStorage.setItem('acount',false);
+				window.location.replace("https://graigs-list.github.io/graigslist.signup.html/");
+			}
+			function logout(){
+  				localStorage.setItem('login',false);
+  				window.location.replace("https://graigs-list.github.io/graigslist.login.html/");
+			}
+		</script>
+	</body>
+</html>
