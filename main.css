@@ -48,6 +48,7 @@
   				height: calc(100vh - 100px);
 			}
 			.icon{
+				font-family: 'Titillium Web', sans-serif;
 				background: darkgray;
 				text-align: center;
 				height: 200px;
