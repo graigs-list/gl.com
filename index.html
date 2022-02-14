@@ -151,16 +151,16 @@
 			if (localStorage.list == "undefined" || localStorage.list == NaN || localStorage.list == 'NaN'){
 				localStorage.setItem('list',0);
 			}
-			if (localStorage.gkoin == "undefined" || localStorage.gkoin == NaN || localStorage.gkoin == 'NaN'){
+			/*if (localStorage.gkoin == "undefined" || localStorage.gkoin == NaN || localStorage.gkoin == 'NaN'){
 				localStorage.setItem('gkoin',0);
-			}
+			}*/
 			console.log(localStorage.list);
 			let list = Number(localStorage.list);
 			function koinshop() {
 				window.location.href = "https://graigs-list.github.io/gl.com/menu.html";
 			}
-			let koin = localStorage.gkoin;
-			console.log(localStorage.gkoin);
+			//let koin = localStorage.gkoin;
+			//console.log(localStorage.gkoin);
 			let object = document.getElementById("koin");
 			object.innerHTML = koin;
 
