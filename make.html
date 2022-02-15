@@ -114,6 +114,7 @@
     <p>Go copy an IMAGE ADRESS and paste it here</p>
     <hr>
     <button onclick = 'sub()'>Create</button>
+    <button style = 'color: red;' onclick = 'cancel()'>Cancel</button>
     <script>
     	function sub(){
     		let name = document.getElementById('text').value;
@@ -123,6 +124,9 @@
     		console.log(name + ' ' + job + " " + img);
     		window.location.replace('https://graigs-list.github.io/gl.com');
     	}
+	function cancel(){
+		window.location.replace('https://graigs-list.github.io/gl.com');
+	}
     </script>
   </body>
 </html>
