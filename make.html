@@ -22,7 +22,7 @@
 			.header{
 				margin: 0 0 0 0;
 				padding-right: auto;
-				background: deepskyblue;
+				background: rgba(0,0,0,0);
 				font-family: 'Nanum Gothic', sans-serif;
 			}
 			p{
@@ -73,10 +73,56 @@
 				color: dodgerblue;
 				font-family: 'Space Grotesk', sans-serif;
 			}
-
+			.field{
+				text-decoration: none;
+				padding-left: auto;
+				padding-right: auto;
+				font-family: 'Titillium Web', sans-serif;
+			}
+			body{
+			  background-image: linear-gradient(to right, dodgerblue, purple);
+			  padding-bottom: auto;
+			}
+			button{
+				background: rgba(0,0,0,0);
+				border: none;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 32px;
+				font-family: 'Space Grotesk', sans-serif;
+			}
 		</style>
 	</head>
 	<body>
-    <p>#- MAKE LISTING HERE -#</p>
+    <table>
+     	<tr>
+          	<td><h1 class = 'name' id = 'TITLE'>Graig's List</h1></td>
+          	<td class = 'motto'>Avoiding copyrights since 2022</td>
+      	</tr>
+	</table>
+	<h3 class = 'header'>Welcome to Graig's List!</h3>
+    <hr>
+    <label class = 'field'for='text'>Listing Name</label>
+    <input class = 'field'type = 'text' id = 'text' name = 'text'>
+    <hr>
+    <label class = 'field'for='job'>Job</label>
+    <input class = 'field'type = 'text' id = 'job' name = 'job'>
+    <hr>
+    <label class = 'field'for='img'>Image</label>
+    <input class = 'field'type = 'text' id = 'img' name = 'img'>
+    <p>Go copy an IMAGE ADRESS and paste it here</p>
+    <hr>
+    <button onclick = 'sub()'>Create</button>
+    <script>
+    	function sub(){
+    		let name = document.getElementById('text').value;
+    		let job = document.getElementById('job').value;
+    		let img = document.getElementById('img').value;
+
+    		console.log(name + ' ' + job + " " + img);
+    		window.location.replace('https://graigs-list.github.io/gl.com');
+    	}
+    </script>
   </body>
 </html>
