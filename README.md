@@ -5,7 +5,7 @@ https://graigs-list.github.io/gl.com/
 
 # NOTICE
 This ENTIRE repository is under CC-BY-NC-ND
-You may copy this repository if you follow rule below
+You may copy this repository if you follow rules below
 1. You must give credit to me
 2. Non-Commercial use only (only for personal use and you may not make money off this)
 3. If you edit this repository you cn only use this product privately
