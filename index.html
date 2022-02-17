@@ -256,11 +256,13 @@
 			function go(){
 				window.location.replace('https://graigs-list.github.io/gl.com/make.html');
 			}
-			function make(){
+			if (localStorage.listing){
 				const object = document.getElementById("cont");
 				const newDiv = document.createElement("div");
-  				const newContent = document.createTextNode("Listing");
+  				const newContent = document.createTextNode(localStorage.listingText);
+  				const job = document.createTextNode(localStorage.listingJob);
   				newDiv.appendChild(newContent);
+  				newDiv.appendChild(job);
   				object.appendChild(newDiv);
   				newDiv.classList.add('icon');
   				list = list + 1;
