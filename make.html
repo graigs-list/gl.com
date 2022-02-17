@@ -132,6 +132,9 @@
     		let img = document.getElementById('img').value;
 
     		console.log(name + ' ' + job + " " + img);
+		localStorage.setItem('listing',true);
+		localStorage.setItem('listingText',name);
+		localStorage.setItem('listingJob',job);
     		window.location.replace('https://graigs-list.github.io/gl.com');
     	}
 	function cancel(){
